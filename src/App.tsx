@@ -2,13 +2,24 @@ import { createBrowserRouter, RouteObject, RouterProvider } from "react-router-d
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Layout from "./layouts/Layout";
 import theme from "./data/theme";
+import Home from "./pages/Home";
+import Privacy from "./pages/Privacy";
 
 function App() {
   const routes: RouteObject[] = [
     {
       path: "/",
       element: <Layout />,
-      children: []
+      children: [
+        {
+          index: true,
+          element: <Home />
+        },
+        {
+          path: "privacy-policy",
+          element: <Privacy />
+        }
+      ]
     }
   ];
 
